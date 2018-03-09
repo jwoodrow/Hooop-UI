@@ -11,7 +11,7 @@ import UIKit
 
 @IBDesignable public class HooopLabel: UILabel {
     
-    @IBInspectable override var text: String? {
+    @IBInspectable override public var text: String? {
         didSet {
             decorate()
         }

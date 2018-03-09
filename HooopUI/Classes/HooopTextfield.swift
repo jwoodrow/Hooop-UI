@@ -107,11 +107,11 @@ import UIKit
     
     /*** more inspectable var can be added **/
     
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
+    override public func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: horizontalInset, dy: verticalInset)
     }
     
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+    override public func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: horizontalInset, dy: verticalInset)
     }
     
@@ -158,7 +158,7 @@ import UIKit
     
     // MARK: - UITexfieldDelegate
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (nextField != nil) {
             nextField?.becomeFirstResponder()
         }

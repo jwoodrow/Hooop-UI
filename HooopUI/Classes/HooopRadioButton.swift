@@ -30,7 +30,7 @@ import UIKit
         self.addTarget(self, action: #selector(HooopRadioButton.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addTarget(self, action: #selector(HooopRadioButton.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
     }
@@ -54,7 +54,7 @@ import UIKit
         }
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         self.addTarget(self, action: #selector(HooopRadioButton.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
     }
     
