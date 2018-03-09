@@ -1,0 +1,6 @@
+framework module Pods_HooopUI {
+  umbrella header "Pods-HooopUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
