@@ -32,7 +32,7 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
     @IBOutlet public var containerView: HooopView!
     public var currentViewController:HooopViewController!
     
-    func addSubview(_ subView:UIView, toView parentView:UIView, direction:Direction?, fadeIn:Bool) {
+    public func addSubview(_ subView:UIView, toView parentView:UIView, direction:Direction?, fadeIn:Bool) {
         if let _ = direction {
             switch direction! {
             case .up:
@@ -57,7 +57,7 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
         parentView.addSubview(subView)
     }
     
-    func cycleFromViewController(_ oldViewController: HooopViewController, toViewController newViewController: HooopViewController, direction:Direction?, fadeIn:Bool, cover:Bool, identifier: String) {
+    public func cycleFromViewController(_ oldViewController: HooopViewController, toViewController newViewController: HooopViewController, direction:Direction?, fadeIn:Bool, cover:Bool, identifier: String) {
         oldViewController.willMove(toParentViewController: nil)
         self.addChildViewController(newViewController)
         self.addSubview(newViewController.view, toView:self.containerView!, direction: direction, fadeIn: fadeIn)

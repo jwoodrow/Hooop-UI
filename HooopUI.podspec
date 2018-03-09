@@ -7,7 +7,7 @@ s.name = "HooopUI"
 s.summary = "UI Classes and extensions used in the Hooop applications"
 s.requires_arc = true
 
-s.version = "0.0.8"
+s.version = "0.0.9"
 
 s.license = { :type => 'All rights reserved.', :text => <<-LICENSE
 Copyright (C) HOOOP, Inc - All Rights Reserved
