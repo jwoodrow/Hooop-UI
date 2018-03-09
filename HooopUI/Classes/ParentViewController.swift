@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol ImplementsSlideInNextView: AnyObject {
+    func slideInNextView(_ identifier:String, direction:Direction?, fadeIn:Bool, from:HooopViewController, cover:Bool)
+}
+
 public enum Direction{
     case up
     case left
@@ -15,7 +19,16 @@ public enum Direction{
     case down
 }
 
-open class ParentViewController: HooopViewController {
+open class ParentViewController: HooopViewController, ImplementsSlideInNextView {
+    open func slideInNextView(_ identifier: String, direction: Direction?, fadeIn: Bool, from: HooopViewController, cover: Bool) {
+        let newViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier) as! HooopViewController
+        newViewController.parentController = self
+        newViewController.getInit(from)
+        newViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.cycleFromViewController(self.currentViewController!, toViewController: newViewController, direction: direction, fadeIn: fadeIn, cover: cover, identifier: identifier)
+        self.currentViewController = newViewController
+    }
+    
     @IBOutlet public var containerView: HooopView!
     public var currentViewController:HooopViewController!
     
