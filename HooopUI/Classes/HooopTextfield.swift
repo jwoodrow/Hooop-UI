@@ -103,6 +103,12 @@ import UIKit
         }
     }
     
+    @IBInspectable public var requiredCharacter: String = "*"{
+        didSet {
+            decorate()
+        }
+    }
+    
     @IBOutlet public var nextField:HooopTextfield?
     
     /*** more inspectable var can be added **/
@@ -149,7 +155,8 @@ import UIKit
             }
             let attributedPlaceholder = NSMutableAttributedString(string: customPlaceholder!, attributes: placeholderAttributes)
             if let _ = requiredColor {
-                attributedPlaceholder.addAttribute(NSForegroundColorAttributeName, value: requiredColor!.cgColor, range: NSMakeRange(customPlaceholder!.count - 2, 1))
+                let range = (customPlaceholder! as NSString).range(of: requiredCharacter)
+                attributedPlaceholder.addAttribute(NSForegroundColorAttributeName, value: requiredColor!, range: range)
             }
             self.attributedPlaceholder = attributedPlaceholder
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		62A7C707FEE963336FCE0F7C /* Pods_HooopUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8067AC1E751627E4D386FE23 /* Pods_HooopUI.framework */; };
+		D55944FA20529B74002B8A8B /* HooopImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55944F920529B74002B8A8B /* HooopImageView.swift */; };
 		D5D8A61A2052559A000F0A13 /* HooopUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D8A6102052559A000F0A13 /* HooopUI.framework */; };
 		D5D8A61F2052559A000F0A13 /* HooopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A61E2052559A000F0A13 /* HooopUITests.swift */; };
 		D5D8A6212052559A000F0A13 /* HooopUI.h in Headers */ = {isa = PBXBuildFile; fileRef = D5D8A6132052559A000F0A13 /* HooopUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 		52AFBDE265B6A0AA081889B4 /* Pods-HooopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HooopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HooopUITests/Pods-HooopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8067AC1E751627E4D386FE23 /* Pods_HooopUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HooopUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7FA42853D3FF90E8A3CAC8 /* Pods-HooopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HooopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HooopUITests/Pods-HooopUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D55944F920529B74002B8A8B /* HooopImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HooopImageView.swift; sourceTree = "<group>"; };
 		D5D8A6102052559A000F0A13 /* HooopUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HooopUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D8A6132052559A000F0A13 /* HooopUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HooopUI.h; sourceTree = "<group>"; };
 		D5D8A6142052559A000F0A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				D5D8A62F20525689000F0A13 /* HooopView.swift */,
 				D5D8A63120525689000F0A13 /* HooopViewController.swift */,
 				D5D8A6392052625D000F0A13 /* ParentViewController.swift */,
+				D55944F920529B74002B8A8B /* HooopImageView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D5D8A63E205265BC000F0A13 /* UIViewControllerExtension.swift in Sources */,
 				D5D8A64220526609000F0A13 /* StringExtension.swift in Sources */,
 				D5D8A63320525689000F0A13 /* HooopRadioButton.swift in Sources */,
+				D55944FA20529B74002B8A8B /* HooopImageView.swift in Sources */,
 				D5D8A64420526628000F0A13 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

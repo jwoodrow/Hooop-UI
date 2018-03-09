@@ -83,17 +83,18 @@ import UIKit
         }
     }
     
-    @IBInspectable public var incrustedPosition: Int = 0 {
-        didSet {
-            decorate()
-        }
-    }
-    
     @IBInspectable public var incrustedVertical: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
+    
+    @IBInspectable public var incrustedReplacementCharacter: String = "~" {
+        didSet {
+            decorate()
+        }
+    }
+
     
     @IBInspectable public var baseLineOffset: CGFloat = 0 {
         didSet {
@@ -186,7 +187,8 @@ import UIKit
             textAttachment.image = incrustedImage!
             textAttachment.bounds = CGRect(x: 0.0, y: incrustedVertical, width: textAttachment.image!.size.width, height: textAttachment.image!.size.height)
             let imageString = NSAttributedString(attachment: textAttachment)
-            titleString.replaceCharacters(in: NSRange(location: incrustedPosition, length: 1), with: imageString)
+            let range = NSString(string: text!).range(of: incrustedReplacementCharacter)
+            titleString.replaceCharacters(in: range, with: imageString)
         }
         self.setAttributedTitle(titleString, for: .normal)
     }
