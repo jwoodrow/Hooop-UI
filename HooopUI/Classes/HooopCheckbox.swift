@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class HooopCheckbox: UIButton {
+@IBDesignable public class HooopCheckbox: UIButton {
     
     // Images
     @IBInspectable var checkedImage:UIImage? = nil {

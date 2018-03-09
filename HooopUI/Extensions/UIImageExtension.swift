@@ -1,6 +1,6 @@
 //
 //  UIImageExtension.swift
-//  JPG
+//  HOOOP
 //
 //  Created by James Woodrow on 26/02/2018.
 //  Copyright © 2018 Hooop. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
     func cropAlpha() -> UIImage {
         

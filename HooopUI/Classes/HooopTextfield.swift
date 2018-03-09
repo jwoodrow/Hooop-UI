@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class HooopTextfield: UITextField, UITextFieldDelegate {
+@IBDesignable public class HooopTextfield: UITextField, UITextFieldDelegate {
     
     @IBInspectable var fontName: String? = "AvenirNext-Bold" {
         didSet {

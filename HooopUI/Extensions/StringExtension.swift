@@ -1,6 +1,6 @@
 //
 //  StringExtension.swift
-//  Hooop
+//  HOOOP
 //
 //  Created by James Woodrow on 06/03/2018.
 //  Copyright © 2018 Hooop. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     subscript (i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]

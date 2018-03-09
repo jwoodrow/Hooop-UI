@@ -1,6 +1,6 @@
 //
 //  HooopView.swift
-//  Hooop
+//  HOOOP
 //
 //  Created by James Woodrow on 05/03/2018.
 //  Copyright © 2018 Hooop. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class HooopView: UIView {
+@IBDesignable public class HooopView: UIView {
 
     @IBInspectable var cornerRadius: CGFloat = 0.0 {
         didSet {

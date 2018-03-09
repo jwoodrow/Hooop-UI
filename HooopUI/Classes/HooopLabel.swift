@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class HooopLabel: UILabel {
+@IBDesignable public class HooopLabel: UILabel {
     
     @IBInspectable override var text: String? {
         didSet {

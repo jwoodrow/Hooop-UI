@@ -1,6 +1,6 @@
 //
 //  UIColorExtension.swift
-//  Hooop
+//  HOOOP
 //
 //  Created by James Woodrow on 24/03/2016.
 //  Copyright © 2016 Hooop. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     convenience init(red: UInt, green: UInt, blue: UInt) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")

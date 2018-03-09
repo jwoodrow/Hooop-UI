@@ -1,6 +1,6 @@
 //
 //  ParentViewController.swift
-//  Base
+//  HOOOP
 //
 //  Created by James Woodrow on 23/01/2018.
 //  Copyright © 2018 Hooop. All rights reserved.
@@ -15,7 +15,7 @@ public enum Direction{
     case down
 }
 
-class ParentViewController: HooopViewController {
+public class ParentViewController: HooopViewController {
     @IBOutlet var containerView: HooopView!
     var currentViewController:HooopViewController!
     

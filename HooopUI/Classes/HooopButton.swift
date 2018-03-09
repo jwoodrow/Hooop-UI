@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class HooopButton: UIButton {
+@IBDesignable public class HooopButton: UIButton {
     
     @IBInspectable var text: String? = nil {
         didSet {

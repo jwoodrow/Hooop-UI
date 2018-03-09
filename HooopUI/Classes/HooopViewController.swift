@@ -1,6 +1,6 @@
 //
 //  HooopViewController.swift
-//  Hooop
+//  HOOOP
 //
 //  Created by James Woodrow on 05/03/2018.
 //  Copyright © 2018 Hooop. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HooopViewController: UIViewController {
+public class HooopViewController: UIViewController {
     var parentController: ParentViewController?
     
     func getInit(_ source:UIViewController){
