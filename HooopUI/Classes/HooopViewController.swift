@@ -8,13 +8,21 @@
 
 import UIKit
 
-open class HooopViewController: UIViewController {
-    var parentController: ParentViewController?
+protocol ImplementsGetInitAndAppeared: AnyObject {
+    func getInit(_ source:HooopViewController)
+    func appeared()
+}
+
+open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
+    func getInit(_ source: HooopViewController) {
+        
+    }
     
-    func getInit(_ source:UIViewController){
+    func appeared() {
+        
     }
-    func appeared(){
-    }
+    
+    var parentController: ParentViewController?
     
     func changeLayout( forTextfield textfield: HooopTextfield, withConfig config: NSDictionary) {
         if (config.value(forKey: "font_name") != nil) {
