@@ -15,7 +15,7 @@ public enum Direction{
     case down
 }
 
-public class ParentViewController: HooopViewController {
+open class ParentViewController: HooopViewController {
     @IBOutlet var containerView: HooopView!
     var currentViewController:HooopViewController!
     

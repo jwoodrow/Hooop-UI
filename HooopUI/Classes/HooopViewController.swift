@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class HooopViewController: UIViewController {
+open class HooopViewController: UIViewController {
     var parentController: ParentViewController?
     
     func getInit(_ source:UIViewController){
