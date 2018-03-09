@@ -11,115 +11,115 @@ import UIKit
 
 @IBDesignable public class HooopButton: UIButton {
     
-    @IBInspectable var text: String? = nil {
+    @IBInspectable public var text: String? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var underlinedWord: String? = nil {
+    @IBInspectable public var underlinedWord: String? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var fontName: String? = "AvenirNext-Bold" {
+    @IBInspectable public var fontName: String? = "AvenirNext-Bold" {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var fontSize: CGFloat = 15 {
+    @IBInspectable public var fontSize: CGFloat = 15 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var customTextAlignment: Int = 1 {
+    @IBInspectable public var customTextAlignment: Int = 1 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var fontColor: UIColor = UIColor.white {
+    @IBInspectable public var fontColor: UIColor = UIColor.white {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var letterSpacing: CGFloat = 0 {
+    @IBInspectable public var letterSpacing: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.white {
+    @IBInspectable public var borderColor: UIColor = UIColor.white {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var lineHeight: CGFloat = 0 {
+    @IBInspectable public var lineHeight: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var incrustedImage: UIImage? = nil {
+    @IBInspectable public var incrustedImage: UIImage? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var incrustedPosition: Int = 0 {
+    @IBInspectable public var incrustedPosition: Int = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var incrustedVertical: CGFloat = 0 {
+    @IBInspectable public var incrustedVertical: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var baseLineOffset: CGFloat = 0 {
+    @IBInspectable public var baseLineOffset: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var shadowBlurRadius: CGFloat = 0 {
+    @IBInspectable public var shadowBlurRadius: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var shadowOffsetX: CGFloat = 0 {
+    @IBInspectable public var shadowOffsetX: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var shadowOffsetY: CGFloat = 0 {
+    @IBInspectable public var shadowOffsetY: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var shadowBlurColor: UIColor = UIColor.clear {
+    @IBInspectable public var shadowBlurColor: UIColor = UIColor.clear {
         didSet {
             decorate()
         }

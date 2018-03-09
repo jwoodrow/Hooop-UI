@@ -12,12 +12,12 @@ import UIKit
 @IBDesignable public class HooopCheckbox: UIButton {
     
     // Images
-    @IBInspectable var checkedImage:UIImage? = nil {
+    @IBInspectable public var checkedImage:UIImage? = nil {
         didSet {
             decorate()
         }
     }
-    @IBInspectable var uncheckedImage:UIImage? = nil {
+    @IBInspectable public var uncheckedImage:UIImage? = nil {
         didSet {
             decorate()
         }
@@ -34,7 +34,7 @@ import UIKit
     }
     
     // Bool property
-    @IBInspectable var isChecked: Bool = false {
+    @IBInspectable public var isChecked: Bool = false {
         didSet{
             decorate()
         }

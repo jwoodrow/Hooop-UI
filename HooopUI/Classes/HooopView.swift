@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable public class HooopView: UIView {
 
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
             decorate()
         }

@@ -11,7 +11,7 @@ import UIKit
 
 public extension UIImage {
     
-    func cropAlpha() -> UIImage {
+    public func cropAlpha() -> UIImage {
         
         let cgImage = self.cgImage!;
         

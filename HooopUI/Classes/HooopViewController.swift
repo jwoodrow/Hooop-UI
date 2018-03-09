@@ -8,23 +8,23 @@
 
 import UIKit
 
-protocol ImplementsGetInitAndAppeared: AnyObject {
+public protocol ImplementsGetInitAndAppeared: AnyObject {
     func getInit(_ source:HooopViewController)
     func appeared()
 }
 
 open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
-    func getInit(_ source: HooopViewController) {
+    open func getInit(_ source: HooopViewController) {
         
     }
     
-    func appeared() {
+    open func appeared() {
         
     }
     
-    var parentController: ParentViewController?
+    public var parentController: ParentViewController?
     
-    func changeLayout( forTextfield textfield: HooopTextfield, withConfig config: NSDictionary) {
+    public func changeLayout( forTextfield textfield: HooopTextfield, withConfig config: NSDictionary) {
         if (config.value(forKey: "font_name") != nil) {
             textfield.fontName = config.value(forKey: "font_name") as? String
         }
@@ -63,7 +63,7 @@ open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
         textfield.frame = CGRect(x: x, y: y, width: width, height: height)
     }
     
-    func changeLayout( forLabel label: HooopLabel, withConfig config: NSDictionary) {
+    public func changeLayout( forLabel label: HooopLabel, withConfig config: NSDictionary) {
         if (config.value(forKey: "font_name") != nil) {
             label.fontName = config.value(forKey: "font_name") as? String
         }
@@ -126,7 +126,7 @@ open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
         label.center = CGPoint(x: center_x, y: center_y)
     }
     
-    func changeLayout( forButton button: HooopButton, withConfig config: NSDictionary) {
+    public func changeLayout( forButton button: HooopButton, withConfig config: NSDictionary) {
         if (config.value(forKey: "font_name") != nil) {
             button.fontName = config.value(forKey: "font_name") as? String
         }
@@ -186,7 +186,7 @@ open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
         button.center = CGPoint(x: center_x, y: center_y)
     }
     
-    func changeLayout( forViews views: [HooopView], withConfig config: NSDictionary) {
+    public func changeLayout( forViews views: [HooopView], withConfig config: NSDictionary) {
         if (config.value(forKey: "corner_radius") != nil) {
             for view in views {
                 view.cornerRadius = CGFloat((config.value(forKey: "corner_radius") as! NSNumber).floatValue)
@@ -207,7 +207,7 @@ open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
         }
     }
     
-    func changeLayout(forView view:HooopView, withConfig config: NSDictionary) {
+    public func changeLayout(forView view:HooopView, withConfig config: NSDictionary) {
         if (config.value(forKey: "corner_radius") != nil) {
             view.cornerRadius = CGFloat((config.value(forKey: "corner_radius") as! NSNumber).floatValue)
         }
@@ -239,7 +239,7 @@ open class HooopViewController: UIViewController, ImplementsGetInitAndAppeared {
         view.frame = CGRect(x: x, y: y, width: width, height: height)
     }
     
-    func changeLayout(forPad pad:HooopButton, withConfig config: NSDictionary, onColumn column: Int, andLine line: Int) {
+    public func changeLayout(forPad pad:HooopButton, withConfig config: NSDictionary, onColumn column: Int, andLine line: Int) {
         if (config.value(forKey: "font_name") != nil) {
             pad.fontName = config.value(forKey: "font_name") as? String
         }

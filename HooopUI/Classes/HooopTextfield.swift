@@ -11,67 +11,67 @@ import UIKit
 
 @IBDesignable public class HooopTextfield: UITextField, UITextFieldDelegate {
     
-    @IBInspectable var fontName: String? = "AvenirNext-Bold" {
+    @IBInspectable public var fontName: String? = "AvenirNext-Bold" {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var fontSize: CGFloat = 15 {
+    @IBInspectable public var fontSize: CGFloat = 15 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var fontColor: UIColor = UIColor.white {
+    @IBInspectable public var fontColor: UIColor = UIColor.white {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var customTextAlignment: Int = 0 {
+    @IBInspectable public var customTextAlignment: Int = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.white {
+    @IBInspectable public var borderColor: UIColor = UIColor.white {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var letterSpacing: CGFloat = 0 {
+    @IBInspectable public var letterSpacing: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var customPlaceholder: String? = nil {
+    @IBInspectable public var customPlaceholder: String? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var horizontalInset: CGFloat = 0 {
+    @IBInspectable public var horizontalInset: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var verticalInset: CGFloat = 0 {
+    @IBInspectable public var verticalInset: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var selfDelegate: Bool = false {
+    @IBInspectable public var selfDelegate: Bool = false {
         didSet {
             if selfDelegate {
                 self.delegate = self
@@ -79,31 +79,31 @@ import UIKit
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var baseLineOffset: CGFloat = 0 {
+    @IBInspectable public var baseLineOffset: CGFloat = 0 {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var placeholderColor: UIColor? = nil {
+    @IBInspectable public var placeholderColor: UIColor? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBInspectable var requiredColor: UIColor? = nil {
+    @IBInspectable public var requiredColor: UIColor? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBOutlet var nextField:HooopTextfield?
+    @IBOutlet public var nextField:HooopTextfield?
     
     /*** more inspectable var can be added **/
     

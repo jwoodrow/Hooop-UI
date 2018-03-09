@@ -12,18 +12,18 @@ import UIKit
 @IBDesignable public class HooopRadioButton: UIButton {
     
     // Images
-    @IBInspectable var checkedImage:UIImage? = nil {
+    @IBInspectable public var checkedImage:UIImage? = nil {
         didSet {
             decorate()
         }
     }
-    @IBInspectable var uncheckedImage:UIImage? = nil {
+    @IBInspectable public var uncheckedImage:UIImage? = nil {
         didSet {
             decorate()
         }
     }
     
-    @IBOutlet var otherRadios: Array<HooopRadioButton>?
+    @IBOutlet public var otherRadios: Array<HooopRadioButton>?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,7 +36,7 @@ import UIKit
     }
     
     // Bool property
-    @IBInspectable var isChecked: Bool = false {
+    @IBInspectable public var isChecked: Bool = false {
         didSet{
             decorate()
         }

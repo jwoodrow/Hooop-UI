@@ -16,8 +16,8 @@ public enum Direction{
 }
 
 open class ParentViewController: HooopViewController {
-    @IBOutlet var containerView: HooopView!
-    var currentViewController:HooopViewController!
+    @IBOutlet public var containerView: HooopView!
+    public var currentViewController:HooopViewController!
     
     func addSubview(_ subView:UIView, toView parentView:UIView, direction:Direction?, fadeIn:Bool) {
         if let _ = direction {
