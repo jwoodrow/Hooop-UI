@@ -29,10 +29,6 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
         self.currentViewController = newViewController
     }
     
-    open func sendGif(_ gif: Any){
-        
-    }
-    
     @IBOutlet public var containerView: HooopView!
     public var currentViewController:HooopViewController!
     
