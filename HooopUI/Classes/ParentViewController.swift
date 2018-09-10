@@ -61,34 +61,54 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
         oldViewController.willMove(toParentViewController: nil)
         self.addChildViewController(newViewController)
         self.addSubview(newViewController.view, toView:self.containerView!, direction: direction, fadeIn: fadeIn)
-        UIView.animate(withDuration: 0.4, animations: {
-            if (fadeIn) {
-                oldViewController.view.alpha = 0
-                newViewController.view.alpha = 1
-            }
-            if let _ = direction {
-                switch direction! {
-                case .up:
-                    oldViewController.view.frame = CGRect(x: 0, y: -self.containerView.frame.height, width: self.containerView.frame.width, height: self.containerView.frame.height)
-                    break
-                case .left:
-                    oldViewController.view.frame = CGRect(x: -self.containerView.frame.width, y: 0, width: self.containerView.frame.width, height: self.containerView.frame.height)
-                    break
-                case .down:
-                    oldViewController.view.frame = CGRect(x: 0, y: self.containerView.frame.height, width: self.containerView.frame.width, height: self.containerView.frame.height)
-                    break
-                case .right:
-                    oldViewController.view.frame = CGRect(x: self.containerView.frame.width, y: 0, width: self.containerView.frame.width, height: self.containerView.frame.height)
-                    break
-                }
-                newViewController.view.frame = CGRect(origin: .zero, size: self.containerView.frame.size)
-            }
-        },
-                       completion: { finished in
-                        oldViewController.view.removeFromSuperview()
-                        oldViewController.removeFromParentViewController()
+        if fadeIn {
+            if let wnd = self.view {
+                
+                let v = UIView(frame: wnd.bounds)
+                v.backgroundColor = UIColor.black
+                v.alpha = 0
+                
+                wnd.addSubview(v)
+                UIView.animate(withDuration: 0.2, animations: {
+                    v.alpha = 1
+                }) { (completed) in
+                    oldViewController.view.removeFromSuperview()
+                    oldViewController.removeFromParentViewController()
+                    newViewController.view.alpha = 1
+                    UIView.animate(withDuration: 0.2, animations: {
+                        v.alpha = 0
+                    }, completion: { (completed) in
                         newViewController.didMove(toParentViewController: self)
                         newViewController.appeared()
-        })
+                    })
+                }
+            }
+        } else {
+            UIView.animate(withDuration: 0.4, animations: {
+                if let _ = direction {
+                    switch direction! {
+                    case .up:
+                        oldViewController.view.frame = CGRect(x: 0, y: -self.containerView.frame.height, width: self.containerView.frame.width, height: self.containerView.frame.height)
+                        break
+                    case .left:
+                        oldViewController.view.frame = CGRect(x: -self.containerView.frame.width, y: 0, width: self.containerView.frame.width, height: self.containerView.frame.height)
+                        break
+                    case .down:
+                        oldViewController.view.frame = CGRect(x: 0, y: self.containerView.frame.height, width: self.containerView.frame.width, height: self.containerView.frame.height)
+                        break
+                    case .right:
+                        oldViewController.view.frame = CGRect(x: self.containerView.frame.width, y: 0, width: self.containerView.frame.width, height: self.containerView.frame.height)
+                        break
+                    }
+                    newViewController.view.frame = CGRect(origin: .zero, size: self.containerView.frame.size)
+                }
+            },
+                           completion: { finished in
+                            oldViewController.view.removeFromSuperview()
+                            oldViewController.removeFromParentViewController()
+                            newViewController.didMove(toParentViewController: self)
+                            newViewController.appeared()
+            })
+        }
     }
 }
