@@ -58,8 +58,8 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
     }
     
     public func cycleFromViewController(_ oldViewController: HooopViewController, toViewController newViewController: HooopViewController, direction:Direction?, fadeIn:Bool, cover:Bool, identifier: String) {
-        oldViewController.willMove(toParentViewController: nil)
-        self.addChildViewController(newViewController)
+        oldViewController.willMove(toParent: nil)
+        self.addChild(newViewController)
         self.addSubview(newViewController.view, toView:self.containerView!, direction: direction, fadeIn: fadeIn)
         if fadeIn {
             if let wnd = self.view {
@@ -73,12 +73,12 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
                     v.alpha = 1
                 }) { (completed) in
                     oldViewController.view.removeFromSuperview()
-                    oldViewController.removeFromParentViewController()
+                    oldViewController.removeFromParent()
                     newViewController.view.alpha = 1
                     UIView.animate(withDuration: 0.2, animations: {
                         v.alpha = 0
                     }, completion: { (completed) in
-                        newViewController.didMove(toParentViewController: self)
+                        newViewController.didMove(toParent: self)
                         newViewController.appeared()
                     })
                 }
@@ -105,8 +105,8 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
             },
                            completion: { finished in
                             oldViewController.view.removeFromSuperview()
-                            oldViewController.removeFromParentViewController()
-                            newViewController.didMove(toParentViewController: self)
+                            oldViewController.removeFromParent()
+                            newViewController.didMove(toParent: self)
                             newViewController.appeared()
             })
         }

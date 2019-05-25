@@ -25,12 +25,12 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addTarget(self, action: #selector(HooopCheckbox.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
+        self.addTarget(self, action: #selector(HooopCheckbox.buttonClicked(_:)), for: UIControl.Event.touchUpInside)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addTarget(self, action: #selector(HooopCheckbox.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
+        self.addTarget(self, action: #selector(HooopCheckbox.buttonClicked(_:)), for: UIControl.Event.touchUpInside)
     }
     
     // Bool property
@@ -43,20 +43,20 @@ import UIKit
     func decorate() {
         if isChecked {
             if (checkedImage != nil) {
-                self.setImage(checkedImage, for: UIControlState.normal)
+                self.setImage(checkedImage, for: UIControl.State.normal)
             }
         } else {
             if (uncheckedImage != nil) {
-                self.setImage(uncheckedImage, for: UIControlState.normal)
+                self.setImage(uncheckedImage, for: UIControl.State.normal)
             }
         }
     }
     
     override public func awakeFromNib() {
-        self.addTarget(self, action: #selector(HooopCheckbox.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
+        self.addTarget(self, action: #selector(HooopCheckbox.buttonClicked(_:)), for: UIControl.Event.touchUpInside)
     }
     
-    func buttonClicked(_ sender: UIButton) {
+    @objc func buttonClicked(_ sender: UIButton) {
         if sender == self {
             isChecked = !isChecked
         }

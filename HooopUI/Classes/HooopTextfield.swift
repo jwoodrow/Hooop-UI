@@ -139,24 +139,24 @@ import UIKit
             paragraphStyle.alignment = .left
             break
         }
-        var titleAttributes:[String : Any] = [
-            NSForegroundColorAttributeName: fontColor,
-            NSKernAttributeName: letterSpacing,
-            NSBaselineOffsetAttributeName: baseLineOffset,
-            NSParagraphStyleAttributeName: paragraphStyle
+        var titleAttributes:[NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: fontColor,
+            NSAttributedString.Key.kern: letterSpacing,
+            NSAttributedString.Key.baselineOffset: baseLineOffset,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
         if let _ = fontName {
-            titleAttributes[NSFontAttributeName] = UIFont(name: fontName!, size: fontSize)
+            titleAttributes[NSAttributedString.Key.font] = UIFont(name: fontName!, size: fontSize)
         }
         if let _ = customPlaceholder {
             var placeholderAttributes = titleAttributes
             if let _ = placeholderColor {
-                placeholderAttributes[NSForegroundColorAttributeName] = placeholderColor
+                placeholderAttributes[NSAttributedString.Key.foregroundColor] = placeholderColor
             }
             let attributedPlaceholder = NSMutableAttributedString(string: customPlaceholder!, attributes: placeholderAttributes)
             if let _ = requiredColor {
                 let range = (customPlaceholder! as NSString).range(of: requiredCharacter)
-                attributedPlaceholder.addAttribute(NSForegroundColorAttributeName, value: requiredColor!, range: range)
+                attributedPlaceholder.addAttribute(NSAttributedString.Key.foregroundColor, value: requiredColor!, range: range)
             }
             self.attributedPlaceholder = attributedPlaceholder
         }

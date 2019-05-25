@@ -159,19 +159,19 @@ import UIKit
         }
         paragraphStyle.lineSpacing = lineHeight
         // Initialize attributed text attributes with color, style, and baseline offset
-        var titleAttributes: [String: Any] = [
-            NSForegroundColorAttributeName : fontColor,
-            NSParagraphStyleAttributeName : paragraphStyle,
-            NSKernAttributeName: letterSpacing,
-            NSBaselineOffsetAttributeName: baseLineOffset
+        var titleAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.foregroundColor : fontColor,
+            NSAttributedString.Key.paragraphStyle : paragraphStyle,
+            NSAttributedString.Key.kern: letterSpacing,
+            NSAttributedString.Key.baselineOffset: baseLineOffset
         ]
         // If the fontName is nil don't define it (it should never be but you never know
         if let _ = fontName {
-            titleAttributes[NSFontAttributeName] = UIFont(name: fontName!, size: fontSize) as Any
+            titleAttributes[NSAttributedString.Key.font] = UIFont(name: fontName!, size: fontSize) as Any
         }
         // If the shadow is nil don't define it for the attributed string
         if let _ = shadow {
-            titleAttributes[NSShadowAttributeName] = shadow!
+            titleAttributes[NSAttributedString.Key.shadow] = shadow!
         }
         // Setup the attributed string
         let titleString = NSMutableAttributedString(string: text!, attributes: titleAttributes)
@@ -179,7 +179,7 @@ import UIKit
         if let _ = underlinedWord {
             let tmpString: NSString = NSString(string: text!)
             let range = tmpString.range(of: underlinedWord!)
-            titleString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
+            titleString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
         }
         // If there is an incrusted image in the string set it up in the right place
         if let _ = incrustedImage {

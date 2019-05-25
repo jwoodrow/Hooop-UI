@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
 
 s.platform = :ios
 s.ios.deployment_target = '9.0'
-s.swift_version = '3.2'
+s.swift_version = '5.0'
 s.name = "HooopUI"
 s.summary = "UI Classes and extensions used in the Hooop applications"
 s.requires_arc = true
 
-s.version = "0.0.15"
+s.version = "0.1.0"
 
 s.license = { :type => 'All rights reserved.', :text => <<-LICENSE
 Copyright (C) HOOOP, Inc - All Rights Reserved
