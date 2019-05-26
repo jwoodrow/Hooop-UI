@@ -62,26 +62,17 @@ open class ParentViewController: HooopViewController, ImplementsSlideInNextView 
         self.addChild(newViewController)
         self.addSubview(newViewController.view, toView:self.containerView!, direction: direction, fadeIn: fadeIn)
         if fadeIn {
-            if let wnd = self.view {
-                
-                let v = UIView(frame: wnd.bounds)
-                v.backgroundColor = UIColor.black
-                v.alpha = 0
-                
-                wnd.addSubview(v)
-                UIView.animate(withDuration: 0.2, animations: {
-                    v.alpha = 1
-                }) { (completed) in
-                    oldViewController.view.removeFromSuperview()
-                    oldViewController.removeFromParent()
-                    newViewController.view.alpha = 1
-                    UIView.animate(withDuration: 0.2, animations: {
-                        v.alpha = 0
-                    }, completion: { (completed) in
-                        newViewController.didMove(toParent: self)
-                        newViewController.appeared()
-                    })
-                }
+            UIView.animate(withDuration: 0.15, animations: {
+                oldViewController.view.alpha = 0.0
+            }) { _ in
+                oldViewController.view.removeFromSuperview()
+                oldViewController.removeFromParent()
+                UIView.animate(withDuration: 0.15, delay: 0.1, options: .curveEaseInOut, animations: {
+                    newViewController.view.alpha = 1.0
+                }, completion: { _ in
+                    newViewController.didMove(toParent: self)
+                    newViewController.appeared()
+                })
             }
         } else {
             UIView.animate(withDuration: 0.4, animations: {
